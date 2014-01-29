@@ -1,0 +1,23 @@
+{
+  "name": "dynamo-local",
+  "description": "Local dynamodb instance that you can start and stop via node.",
+  "keywords": [
+    "dynamodb"
+  ],
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/apto/dynamo-local.git"
+  },
+  "author": {
+    "name": "Steve Molitor"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apto/dynamo-local/issues"
+  },
+  "dependencies": {
+  },
+  "readmeFilename": "README.md",
+  "bin": "./cmd.js"
+}

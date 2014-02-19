@@ -4,7 +4,7 @@
   "keywords": [
     "dynamodb"
   ],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/apto/dynamo-local.git"
@@ -16,8 +16,7 @@
   "bugs": {
     "url": "https://github.com/apto/dynamo-local/issues"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "readmeFilename": "README.md",
   "bin": "./cmd.js"
 }

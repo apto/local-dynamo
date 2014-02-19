@@ -26,5 +26,9 @@ module.exports = function startDynamo(options) {
   child.stdout.pipe(process.stdout);
   child.stderr.pipe(process.stderr);
 
+  process.on('exit', function () {
+    child.kill();
+  });
+
   return child;
 };

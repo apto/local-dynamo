@@ -1,24 +1,27 @@
 README
+========
 
-For an overview of DynamoDB local please refer to the documentation at http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.html 
+For an overview of DynamoDB Local please refer to the documentation at http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.html 
 
 Enhancements in this release 
+-----------------------------
 
-This release provides support for Global Secondary Indexes(GSI). 
+This release provides support for in-memory execution and ability to provide the database file location. 
 
-It also supports Java6 (previous release of this tool supported Java7 only) and includes fixes to issues reported by our customers  
+DynamoDB Local added support for Global Secondary Indexes (GSI) in 2013-12-12 release. This release includes a fix for GSI query as reported by some customers. For an overview on GSI, refer to the documentation at http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html
 
-Other changes
+Running DynamoDB Local 
+-----------------------
 
-1. Running DynamoDB local
-The command has changed slightly. The new command is
-java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar 
+This release adds additional command line parameters. 
+java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar [-port <port-no.>] [-inMemory] [-dbPath <path>]
 
-By default DynamoDB local runs on port 8000. If you want to change the port, please use the following command
-java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar  --port <port #  for e.g. 8091>
+Available Options:
+ -dbPath <path>     Specify the location of your database file. Default is
+                    the current directory.
+ -inMemory          When specified, DynamoDB Local will run in memory.
+ -port <port-no.>   Specify a port number. Default is 8000
+ -help              Display DynamoDB Local usage and options.
 
-2.Backward compatibility with previous release of DynamoDB local
+Note that -inMemory and -dbPath options cannot be used together.
 
-All your code and unit tests, you used to with the previous version of DynamoDB local will run unchanged with this release. 
-   
-In this release, the local database file format has changed; therefore, this release of DynamoDB Local will not be able to read data files created by older releases
